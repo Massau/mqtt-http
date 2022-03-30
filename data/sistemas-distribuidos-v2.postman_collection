@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "6c4ebf4d-ed7c-4af2-914a-84bb2a7d77d4",
+		"name": "sistemas-distribuidos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "post-mensagem",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "{{url}}/mensagem"
+			},
+			"response": [
+				{
+					"name": "post-mensagem",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "text/plain",
+								"type": "text"
+							},
+							{
+								"key": "x-mock-match-request-body",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\"Minha mensagem\"",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": "{{url}}/mensagem"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"mensagem\": \"Sucesso\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get-mensagem",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/mensagem?id=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"mensagem"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get-mensagem",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/mensagem?id=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"mensagem"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"mensagem\": \"Mensagem MQTT\"\r\n}"
+				}
+			]
+		}
+	]
+}
